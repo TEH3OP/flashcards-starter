@@ -3,18 +3,23 @@ import { useHistory } from "react-router-dom";
 import { v4 as uuidv4 } from "uuid";
 import ROUTES from "../app/routes";
 import { ALL_ICONS } from "../data/icons";
+import { useDispatch } from 'react-redux';
+import { addTopic } from "../features/topics/topicsSlice";
 
 export default function NewTopicForm() {
   const [name, setName] = useState("");
   const [icon, setIcon] = useState("");
   const history = useHistory();
-
+  const dispatch = useDispatch();
   const handleSubmit = (e) => {
     e.preventDefault();
     if (name.length === 0) {
       return;
     }
 
+    let id = uuidv4(); 
+
+    dispatch( addTopic( {id, name, icon} ));
     // dispatch your add topic action here
     history.push(ROUTES.topicsRoute());
   };
