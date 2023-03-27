@@ -10,9 +10,9 @@ const cardsSlice = createSlice(
             }
         }
     }
-)
+);
 
-export const selectorCards = (state) => state.cards.cards;
+export const selectorCards = (store) => store.cards.cards;
 
 export const { addCard } = cardsSlice.actions;
 

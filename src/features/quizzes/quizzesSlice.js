@@ -29,7 +29,5 @@ export const thunkAddQuiz = (payload) => {
 
 export const selectorQuizzes = (state) => state.quizzes.quizzes;
 
-export { addQuiz, addQuizsToTopic };
-
 export default quizzesSlice.reducer;
 
