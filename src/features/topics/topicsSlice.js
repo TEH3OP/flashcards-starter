@@ -26,7 +26,7 @@ const topicsSlice = createSlice(
     }
 );
 
-export const selectTopics = (store) => store.topics.topics;
+export const selectorTopics = (store) => store.topics.topics;
 
 export const { addTopic, addQuizsToTopic } = topicsSlice.actions;
 

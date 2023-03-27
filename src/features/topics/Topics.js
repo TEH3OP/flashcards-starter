@@ -1,11 +1,11 @@
 import NewTopicForm from "../../components/NewTopicForm";
 import { Link } from "react-router-dom";
 import ROUTES from "../../app/routes";
-import { selectTopics } from "./topicsSlice";
+import { selectorTopics } from "./topicsSlice";
 import { useSelector } from 'react-redux';
 
 export default function Topics() {
-  const topics = useSelector(selectTopics); // replace this with a call to your selector to select all the topics in state
+  const topics = useSelector(selectorTopics); // replace this with a call to your selector to select all the topics in state
   console.log('All topics (useSelector)');
   console.log(topics);
 
@@ -14,19 +14,19 @@ export default function Topics() {
       <h1>Topics</h1>
       <ul className="topics-list">
         {Object.values(topics).map((topic) => (
-        <li className="topic" key={topic.id}>
-          <Link to={ROUTES.topicRoute(topic.id)} className="topic-link">
-            <div className="topic-container">
-              <img src={topic.icon} alt="" />
-              <div className="text-content">
-                <h2>{topic.name}</h2>
-                {console.log('topic')}
-                {console.log(topic)}
-                <p>{topic.quizIds.length} Quizzes</p>
+          <li className="topic" key={topic.id}>
+            <Link to={ROUTES.topicRoute(topic.id)} className="topic-link">
+              <div className="topic-container">
+                <img src={topic.icon} alt="" />
+                <div className="text-content">
+                  <h2>{topic.name}</h2>
+                  {console.log('topic')}
+                  {console.log(topic)}
+                  <p>{topic.quizIds.length} Quizzes</p>
+                </div>
               </div>
-            </div>
-          </Link>
-        </li>
+            </Link>
+          </li>
         ))}
       </ul>
       <Link
