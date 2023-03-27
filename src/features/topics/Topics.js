@@ -6,8 +6,8 @@ import { useSelector } from 'react-redux';
 
 export default function Topics() {
   const topics = useSelector(selectorTopics); // replace this with a call to your selector to select all the topics in state
-  console.log('All topics (useSelector)');
-  console.log(topics);
+  // console.log('All topics (useSelector)');
+  // console.log(topics);
 
   return (
     <section className="center">
@@ -20,8 +20,8 @@ export default function Topics() {
                 <img src={topic.icon} alt="" />
                 <div className="text-content">
                   <h2>{topic.name}</h2>
-                  {console.log('topic')}
-                  {console.log(topic)}
+                  {/* {console.log('topic')}
+                  {console.log(topic)} */}
                   <p>{topic.quizIds.length} Quizzes</p>
                 </div>
               </div>
